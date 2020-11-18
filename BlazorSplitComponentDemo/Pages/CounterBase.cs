@@ -1,15 +1,16 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Components;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace BlazorSplitComponentDemo.Pages
 {
-    public partial class Counter
+    public class CounterBase : ComponentBase
     {
-        private int currentCount = 0;
+        protected int currentCount = 0;
 
-        private void IncrementCount()
+        protected void IncrementCount()
         {
             currentCount++;
         }
