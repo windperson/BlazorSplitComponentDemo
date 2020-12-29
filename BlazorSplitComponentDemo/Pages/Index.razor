@@ -1,7 +1,20 @@
 @page "/"
+@using CounterComponent;
+
 
 <h1>Hello, world!</h1>
 
 Welcome to your new app.
 
+<Component1 ParentName="Some text I want to transmit from the parent to the child component"
+            @bind-Text="_textValue">
+</Component1>
+
+The text is : @_textValue
+
 <SurveyPrompt Title="How is Blazor working for you?" />
+
+@code
+{
+    private string _textValue = string.Empty;
+}

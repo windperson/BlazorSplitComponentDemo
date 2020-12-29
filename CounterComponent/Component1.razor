@@ -1,0 +1,15 @@
+﻿<div class="my-component">
+    This Blazor component is defined in the <strong>CounterComponent</strong> package and it is used from
+    <strong>@ParentName</strong>.
+    <br/>
+    <button class="btn btn-primary" @onclick="GetTextAsync">Click me</button>
+    <br/>
+    <text>Text: @Text</text>
+</div>
+
+@code
+{
+    [Parameter] public string Text { get; set; }
+
+    [Parameter] public EventCallback<string> TextChanged { get; set; }
+}
