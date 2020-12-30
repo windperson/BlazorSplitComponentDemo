@@ -18,7 +18,6 @@
     "BlazorSplitComponentDemo": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "counter",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

@@ -1,4 +1,6 @@
 @page "/"
+@using Microsoft.Extensions.Logging;
+@inject ILogger<Index> Logger;
 @using CounterComponent;
 
 
@@ -6,15 +8,21 @@
 
 Welcome to your new app.
 
-<Component1 ParentName="Some text I want to transmit from the parent to the child component"
-            @bind-Text="_textValue">
+<Component1 ParentName="Some text that transmits from the parent to the child component"
+            TextChanged="@OnChildTextChanged">
 </Component1>
 
 The text is : @_textValue
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<SurveyPrompt Title="How is Blazor working for you?"/>
 
 @code
 {
     private string _textValue = string.Empty;
+
+    private void OnChildTextChanged(string childText)
+    {
+        Logger.LogInformation("child text is:\'{0}\'", childText);
+        _textValue = childText;
+    }
 }

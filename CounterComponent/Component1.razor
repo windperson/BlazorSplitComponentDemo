@@ -1,6 +1,7 @@
 ﻿<div class="my-component">
-    This Blazor component is defined in the <strong>CounterComponent</strong> package and it is used from
+    This Blazor component is defined in the <strong>CounterComponent</strong> package and it is used from:<br/>
     <strong>@ParentName</strong>.
+    <br/>
     <br/>
     <button class="btn btn-primary" @onclick="GetTextAsync">Click me</button>
     <br/>
@@ -9,7 +10,12 @@
 
 @code
 {
-    [Parameter] public string Text { get; set; }
+    [Parameter]
+    public string Text { get; set; }
 
-    [Parameter] public EventCallback<string> TextChanged { get; set; }
+    [Parameter]
+    public string ParentName { get; set; }
+
+    [Parameter]
+    public EventCallback<string> TextChanged { get; set; }
 }

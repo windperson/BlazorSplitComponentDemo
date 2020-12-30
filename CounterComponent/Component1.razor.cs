@@ -7,7 +7,6 @@ namespace CounterComponent
 {
     public partial class Component1
     {
-        [Parameter] public string ParentName { get; set; }
 
         [Inject] private IJSRuntime JsRuntime { get; set; }
 
